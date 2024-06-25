@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $routes = [
@@ -9,9 +11,7 @@ $routes = [
 ];
 
 if (!array_key_exists($uri, $routes)) {
-  http_response_code(404);
-  require 'controllers/_404.php';
-  die();
+  abort(404, 'controllers/_404.php');
 }
 
 require $routes[$uri];
