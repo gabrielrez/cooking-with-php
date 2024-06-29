@@ -1,17 +1,10 @@
 <?php
-
 require 'functions.php';
+require 'router.php';
+require 'Database.php';
 
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+// $config = require 'config.php';
+// $db = new Database($config['database']);
+// $posts = $db->query('SELECT * FROM posts')->fetchAll(PDO::FETCH_ASSOC);
 
-$routes = [
-  '/' => 'controllers/home.php',
-  '/about' => 'controllers/about.php',
-  '/contact' => 'controllers/contact.php',
-];
-
-if (!array_key_exists($uri, $routes)) {
-  abort(404, 'controllers/_404.php');
-}
-
-require $routes[$uri];
+// dd($posts);
