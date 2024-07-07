@@ -10,15 +10,19 @@ body {
   margin: 0 auto;
 }
 
-ul,
-li {
+nav ul,
+nav ul li {
   list-style: none;
 }
 
-a {
+nav ul li a {
   text-decoration: none;
   color: #FFF;
   padding: 8px;
+}
+
+.note {
+  margin-top: 16px;
 }
 
 .active {
