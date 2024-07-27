@@ -6,4 +6,4 @@ $db = new Database($config['database']);
 $heading = 'Notes';
 $notes = $db->query('select * from notes')->getAll();
 
-require "views/notes.view.php";
+require "views/notes/index.view.php";
