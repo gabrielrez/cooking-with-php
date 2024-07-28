@@ -18,6 +18,15 @@ function abort($error = 404)
   die();
 }
 
+function routeToController($uri, $routes)
+{
+  if (!array_key_exists($uri, $routes)) {
+    abort(404, 'controllers/_404.php');
+  }
+
+  require base_path($routes[$uri]);
+}
+
 function authorize($cond, $status = Response::FORBIDDEN)
 {
   if (!$cond) {
