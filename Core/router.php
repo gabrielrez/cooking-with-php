@@ -15,4 +15,4 @@ if (!array_key_exists($uri, $routes)) {
   abort(404, 'controllers/_404.php');
 }
 
-require $routes[$uri];
+require base_path($routes[$uri]);
